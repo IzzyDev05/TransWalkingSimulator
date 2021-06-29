@@ -1,0 +1,40 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class DialogueNPC : MonoBehaviour
+{
+    [SerializeField] TextAssetValue dialogueValue;
+    [SerializeField] TextAsset myDialogue;
+
+    private bool playerInRange = false;
+    private DialogueController dialogueController;
+
+    private void Start() {
+        dialogueController = FindObjectOfType<DialogueController>();
+    }
+
+    private void Update() {
+        HandleDialogueUI();
+    }
+
+    private void OnTriggerEnter(Collider other) {
+        if (other.tag == "Player") {
+            playerInRange = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other) {
+        if (other.tag == "Player") {
+            playerInRange = false;
+            dialogueController.DisableCanvas();
+        }
+    }
+
+    private void HandleDialogueUI() {
+        if (playerInRange && Input.GetKey(KeyCode.E)) {
+            dialogueController.EnableCanvas();
+            dialogueValue.value = myDialogue;
+        }
+    }
+}
