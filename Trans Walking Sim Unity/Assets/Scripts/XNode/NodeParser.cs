@@ -8,9 +8,13 @@ public class NodeParser : MonoBehaviour
 {
     public DialogueGraph graph;
 
+    [SerializeField] string playerName;
+    [SerializeField] string npcName;
     [SerializeField] TMP_Text speaker;
     [SerializeField] TMP_Text dialogue;
 
+    private List<GameObject> playerOptionButtons = new List<GameObject>();
+    private List<GameObject> playerOptionText = new List<GameObject>();
     private Coroutine _parser;
 
     private void Start() {
@@ -34,13 +38,16 @@ public class NodeParser : MonoBehaviour
         }
 
         if (dataParts[0] == "DialogueNode") {
-            speaker.text = dataParts[1];
-            dialogue.text = dataParts[2];
+            speaker.text = npcName;
 
-            yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
-            yield return new WaitUntil(() => Input.GetMouseButtonUp(0));
+            if (dataParts[1] == npcName) {
+                dialogue.text = dataParts[2];
+            }
+            else {
+                CreatePlayerDialogue(dataParts);
+            }
 
-            NextNode("exit");
+            yield return new WaitForSeconds(0.0001f);
         }
     }
 
@@ -58,5 +65,20 @@ public class NodeParser : MonoBehaviour
         }
 
         _parser = StartCoroutine(ParseNode());
+    }
+
+    public void ButtonPress(int index) {
+        NextNode("exit" + index);
+    }
+
+    private void CreatePlayerDialogue(string[] dataParts) {
+        playerOptionButtons.AddRange(GameObject.FindGameObjectsWithTag("PlayerOption"));
+        playerOptionText.AddRange(GameObject.FindGameObjectsWithTag("PlayerOptionText"));
+
+        foreach (var item in playerOptionText) {
+            TMP_Text currentText = item.GetComponent<TMP_Text>();
+
+            currentText.text = dataParts[2];
+        }
     }
 }

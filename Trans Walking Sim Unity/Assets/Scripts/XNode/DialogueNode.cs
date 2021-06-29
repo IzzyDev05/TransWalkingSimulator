@@ -1,12 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using XNode;
+﻿using UnityEngine;
 
 public class DialogueNode : BaseNode
 {
     [Input] public int entry;
-    [Output] public int exit;
+    [Output] public int exit0;
+    [Output] public int exit1;
+    [Output] public int exit2;
+    [Output] public int exit3;
+
     public string speakerName;
     public string dialogueLine;
 
