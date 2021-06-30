@@ -13,14 +13,17 @@ public class DialogueController : MonoBehaviour
     [SerializeField] GameObject choicePrefab;
     [SerializeField] GameObject dialougeHolder;
     [SerializeField] GameObject choiceHolder;
+    [SerializeField] GameObject chocolateBar;
     [SerializeField] TextAssetValue dialogueValue;
     [SerializeField] Story myStory;
 
+    private bool showChocolate;
+
     public void EnableCanvas() {
         dialogueCanvas.SetActive(true);
-        dialogueCanvasEnabled = true;
         SetStory();
         RefreshView();
+        dialogueCanvasEnabled = true;
     }
 
     public void DisableCanvas() {
@@ -46,6 +49,7 @@ public class DialogueController : MonoBehaviour
 
     public void RefreshView() {
         while (myStory.canContinue) {
+            ShowChocolateBar();
             MakeNewDialogue(myStory.Continue());
         }
         if (myStory.currentChoices.Count > 0) {
@@ -87,5 +91,24 @@ public class DialogueController : MonoBehaviour
     private void ChooseChoice(int choice) {
         myStory.ChooseChoiceIndex(choice);
         RefreshView();
+    }
+
+    private void ShowChocolateBar() {
+        object showChocolate = myStory.variablesState["showChocolate"];
+        bool shouldShowChocolate = false;
+
+        if (showChocolate is bool) {
+            shouldShowChocolate = (bool)showChocolate;
+        }
+        else {
+            shouldShowChocolate = false;
+        }
+
+        if (shouldShowChocolate) {
+            chocolateBar.SetActive(true);
+        }
+        else {
+            chocolateBar.SetActive(false);
+        }
     }
 }

@@ -33,8 +33,8 @@ public class DialogueNPC : MonoBehaviour
 
     private void HandleDialogueUI() {
         if (playerInRange && Input.GetKey(KeyCode.E)) {
-            dialogueController.EnableCanvas();
             dialogueValue.value = myDialogue;
+            dialogueController.EnableCanvas();
         }
     }
 }
