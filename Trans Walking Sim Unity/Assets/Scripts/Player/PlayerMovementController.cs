@@ -33,8 +33,8 @@ public class PlayerMovementController : MonoBehaviour
         velocityZ = Mathf.Clamp(velocityZ, -0.707f, 0.707f);
         velocityX = Mathf.Clamp(velocityX, -0.707f, 0.707f);
 
-        animator.SetFloat("VelocityZ", velocityZ, 0.1f, Time.deltaTime);
-        animator.SetFloat("VelocityX", velocityX, 0.1f, Time.deltaTime);
+        animator.SetFloat("VelocityZ", velocityZ, 0.05f, Time.deltaTime);
+        animator.SetFloat("VelocityX", velocityX, 0.05f, Time.deltaTime);
     }
 
     private void AimTowardsMouse() {
