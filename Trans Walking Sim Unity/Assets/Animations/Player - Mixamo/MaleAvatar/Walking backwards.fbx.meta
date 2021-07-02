@@ -5,7 +5,7 @@ ModelImporter:
   internalIDToNameTable:
   - first:
       74: -203655887218126122
-    second: Walking backwards 2.0
+    second: Walking backwards
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -35,7 +35,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Walking backwards 2.0
+      name: Walking backwards
       takeName: mixamo.com
       internalID: 0
       firstFrame: 0
@@ -57,7 +57,129 @@ ModelImporter:
       heightFromFeet: 0
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
+      curves:
+      - name: IKLeftFootWeight
+        curve:
+          serializedVersion: 2
+          curve:
+          - serializedVersion: 3
+            time: 0
+            value: 1
+            inSlope: -0.023841402
+            outSlope: -0.023841402
+            tangentMode: 34
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0.33333334
+          - serializedVersion: 3
+            time: 0.08192157
+            value: 0.9980469
+            inSlope: 0.0141925365
+            outSlope: 0.0141925365
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.5601913
+          - serializedVersion: 3
+            time: 0.10406407
+            value: 0.0017730852
+            inSlope: -0.0046949936
+            outSlope: -0.0046949936
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.65651864
+            outWeight: 0.16919532
+          - serializedVersion: 3
+            time: 0.29823107
+            value: 0.0019892752
+            inSlope: -0.0013722071
+            outSlope: -0.0013722071
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.75317
+          - serializedVersion: 3
+            time: 0.3515832
+            value: 1.0000598
+            inSlope: 0.019404948
+            outSlope: 0.019404948
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.086414345
+          - serializedVersion: 3
+            time: 1
+            value: 1
+            inSlope: -0.00009229105
+            outSlope: -0.00009229105
+            tangentMode: 34
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0
+          preInfinity: 2
+          postInfinity: 2
+          rotationOrder: 4
+      - name: IKRightFootWeight
+        curve:
+          serializedVersion: 2
+          curve:
+          - serializedVersion: 3
+            time: 0
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 34
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0.33333334
+          - serializedVersion: 3
+            time: 0.3276086
+            value: 1
+            inSlope: 0.003504578
+            outSlope: 0.003504578
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.42983648
+          - serializedVersion: 3
+            time: 0.3840936
+            value: 0.005284488
+            inSlope: 0.00095024396
+            outSlope: 0.00095024396
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.6407483
+            outWeight: 0.1240637
+          - serializedVersion: 3
+            time: 0.7977082
+            value: 0.0021123886
+            inSlope: 0.00012203583
+            outSlope: 0.00012203583
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 1
+          - serializedVersion: 3
+            time: 0.81776583
+            value: 0.99667835
+            inSlope: -0.0047792504
+            outSlope: -0.0047792504
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.34098333
+          - serializedVersion: 3
+            time: 1
+            value: 1
+            inSlope: 0.01822736
+            outSlope: 0.01822736
+            tangentMode: 34
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0
+          preInfinity: 2
+          postInfinity: 2
+          rotationOrder: 4
       events: []
       transformMask: []
       maskType: 3

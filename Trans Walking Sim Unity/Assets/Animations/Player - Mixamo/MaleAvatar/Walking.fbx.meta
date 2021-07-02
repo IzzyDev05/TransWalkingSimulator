@@ -5,7 +5,7 @@ ModelImporter:
   internalIDToNameTable:
   - first:
       74: -203655887218126122
-    second: Walking 2.0
+    second: Walking
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -35,7 +35,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Walking 2.0
+      name: Walking
       takeName: mixamo.com
       internalID: 0
       firstFrame: 0
@@ -144,12 +144,12 @@ ModelImporter:
           - serializedVersion: 3
             time: -0.028464526
             value: 0.0068876725
-            inSlope: 0.036764577
-            outSlope: 0.036764577
+            inSlope: -0.05548578
+            outSlope: -0.05548578
             tangentMode: 0
             weightedMode: 0
             inWeight: 1
-            outWeight: 0.33333334
+            outWeight: 0.12073742
           - serializedVersion: 3
             time: 0.5
             value: 0.0033473969

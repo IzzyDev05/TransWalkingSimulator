@@ -5,7 +5,7 @@ ModelImporter:
   internalIDToNameTable:
   - first:
       74: -203655887218126122
-    second: Right strafe 2.0
+    second: Right strafe
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -35,7 +35,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Right strafe 2.0
+      name: Right strafe
       takeName: mixamo.com
       internalID: 0
       firstFrame: 0
@@ -57,7 +57,129 @@ ModelImporter:
       heightFromFeet: 0
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
+      curves:
+      - name: IKLeftFootWeight
+        curve:
+          serializedVersion: 2
+          curve:
+          - serializedVersion: 3
+            time: 0
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 0.27216053
+            value: -0.0020246373
+            inSlope: 0.008184969
+            outSlope: 0.008184969
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 1
+          - serializedVersion: 3
+            time: 0.29476684
+            value: 0.9953705
+            inSlope: -0.001000607
+            outSlope: -0.001000607
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.49967185
+          - serializedVersion: 3
+            time: 0.74044436
+            value: 1.0003356
+            inSlope: -0.00016193191
+            outSlope: -0.00016193191
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33688903
+            outWeight: 1
+          - serializedVersion: 3
+            time: 0.76524127
+            value: 0.0054016113
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
+          - serializedVersion: 3
+            time: 1
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          preInfinity: 3
+          postInfinity: 3
+          rotationOrder: 4
+      - name: IKRightFootWeight
+        curve:
+          serializedVersion: 2
+          curve:
+          - serializedVersion: 3
+            time: 0
+            value: 1
+            inSlope: 0.00072048255
+            outSlope: 0.00072048255
+            tangentMode: 34
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0.33333334
+          - serializedVersion: 3
+            time: 0.25414282
+            value: 1.0001831
+            inSlope: 0.006000117
+            outSlope: 0.006000117
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 1
+          - serializedVersion: 3
+            time: 0.3018708
+            value: 0.009352684
+            inSlope: -0.0032593464
+            outSlope: -0.0032593464
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.11451413
+          - serializedVersion: 3
+            time: 0.73555624
+            value: 0.009322166
+            inSlope: 0.00083058036
+            outSlope: 0.00083058036
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 1
+          - serializedVersion: 3
+            time: 0.7737403
+            value: 0.9998869
+            inSlope: 0.0009434151
+            outSlope: 0.0009434151
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 1
+          - serializedVersion: 3
+            time: 1
+            value: 1
+            inSlope: 0.0004999989
+            outSlope: 0.0004999989
+            tangentMode: 34
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0
+          preInfinity: 2
+          postInfinity: 2
+          rotationOrder: 4
       events: []
       transformMask: []
       maskType: 3
