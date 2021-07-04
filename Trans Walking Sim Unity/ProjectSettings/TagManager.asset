@@ -9,6 +9,8 @@ TagManager:
   - Ground
   - HoldableObject
   - ObjectGrabber
+  - PlayerHandRegion
+  - Immovable
   layers:
   - Default
   - TransparentFX

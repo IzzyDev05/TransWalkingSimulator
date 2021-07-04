@@ -5,13 +5,14 @@ public class IKObjectGrabber : MonoBehaviour
 {
     [HideInInspector] public bool objectInRange = false;
     [HideInInspector] public bool canLookAtObject = false;
+    [HideInInspector] public bool playerShouldHoldObject = false;
 
+    [SerializeField] Transform playerRigTransform;
     [SerializeField] float reactionTime = 0.5f;
 
     private Transform lookObj = null;
     private Transform rightHandObj = null;
 
-    private bool playerShouldHoldObject = false;
     private float state = 0f;
     private float elapsedTime = 0f;
 
@@ -98,8 +99,12 @@ public class IKObjectGrabber : MonoBehaviour
 
                 GameObject mainObject = GetMainObject();
 
-                mainObject.transform.parent = this.transform;
-                mainObject.GetComponent<Rigidbody>().isKinematic = true;
+                if (mainObject.tag != "Immovable") {
+                    mainObject.transform.parent = playerRigTransform;
+                }
+                if (mainObject.GetComponent<Rigidbody>()) {
+                    mainObject.GetComponent<Rigidbody>().isKinematic = true;
+                }
             }
         }
         else {
@@ -117,8 +122,12 @@ public class IKObjectGrabber : MonoBehaviour
 
                     GameObject mainObject = GetMainObject();
 
-                    mainObject.transform.parent = null;
-                    mainObject.GetComponent<Rigidbody>().isKinematic = false;
+                    if (mainObject.tag != "Immovable") {
+                        mainObject.transform.parent = null;
+                    }
+                    if (mainObject.GetComponent<Rigidbody>()) {
+                        mainObject.GetComponent<Rigidbody>().isKinematic = false;
+                    }
                 }
             }
             else {
