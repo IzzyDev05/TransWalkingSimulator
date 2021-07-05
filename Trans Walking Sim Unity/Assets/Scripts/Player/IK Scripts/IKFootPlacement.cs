@@ -8,7 +8,7 @@ public class IKFootPlacement : MonoBehaviour
 
     private Animator animator;
 
-    void Start() => animator = GetComponent<Animator>();
+    void Start() => animator = GetComponentInParent<Animator>();
 
     private void OnAnimatorIK(int layerIndex) {
         if (animator) {

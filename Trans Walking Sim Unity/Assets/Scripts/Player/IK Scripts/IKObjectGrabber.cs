@@ -7,7 +7,7 @@ public class IKObjectGrabber : MonoBehaviour
     [HideInInspector] public bool canLookAtObject = false;
     [HideInInspector] public bool playerShouldHoldObject = false;
 
-    [SerializeField] Transform playerRigTransform;
+    [SerializeField] Transform holdableObjectParent;
     [SerializeField] float reactionTime = 0.5f;
 
     private Transform lookObj = null;
@@ -21,7 +21,7 @@ public class IKObjectGrabber : MonoBehaviour
     private Animator animator;
 
     private void Start() {
-        animator = GetComponent<Animator>();
+        animator = GetComponentInParent<Animator>();
         state = 0;
         objectLookScript = FindObjectOfType<CanLookAtObject>();
         objectHoldScript = FindObjectOfType<CanHoldObject>();
@@ -100,7 +100,7 @@ public class IKObjectGrabber : MonoBehaviour
                 GameObject mainObject = GetMainObject();
 
                 if (mainObject.tag != "Immovable") {
-                    mainObject.transform.parent = playerRigTransform;
+                    mainObject.transform.parent = holdableObjectParent;
                 }
                 if (mainObject.GetComponent<Rigidbody>()) {
                     mainObject.GetComponent<Rigidbody>().isKinematic = true;

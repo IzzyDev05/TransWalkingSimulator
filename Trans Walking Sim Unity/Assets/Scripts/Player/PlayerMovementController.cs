@@ -1,17 +1,18 @@
+using System;
 using UnityEngine;
 
 public class PlayerMovementController : MonoBehaviour
 {
     [SerializeField] float speed = 5f;
-    [SerializeField] LayerMask aimLayerMask;
+    [SerializeField] Transform forwardObject;
 
     private Animator animator;
 
-    private void Awake() => animator = GetComponent<Animator>();
+    private void Awake() {
+        animator = GetComponentInParent<Animator>();
+    }
 
     private void Update() {
-        //AimTowardsMouse();
-
         // Reading the input
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
@@ -22,9 +23,9 @@ public class PlayerMovementController : MonoBehaviour
         if (movement.magnitude > 0) {
             movement.Normalize();
             movement *= speed * Time.deltaTime;
-            transform.Translate(movement, Space.World);
+            forwardObject.Translate(movement);
         }
-
+        
         // Animating
         float velocityZ = Vector3.Dot(movement.normalized, transform.forward);
         float velocityX = Vector3.Dot(movement.normalized, transform.right);
@@ -37,13 +38,8 @@ public class PlayerMovementController : MonoBehaviour
         animator.SetFloat("VelocityX", velocityX, 0.05f, Time.deltaTime);
     }
 
-    private void AimTowardsMouse() {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out var hitInfo, Mathf.Infinity, aimLayerMask)) {
-            var direction = hitInfo.point - transform.position;
-            direction.y = 0f;
-            direction.Normalize();
-            transform.forward = direction;
-        }
+    private void OnDrawGizmos() {
+        Gizmos.color = Color.red;
+        Gizmos.DrawRay(forwardObject.position, forwardObject.forward * 10);
     }
 }

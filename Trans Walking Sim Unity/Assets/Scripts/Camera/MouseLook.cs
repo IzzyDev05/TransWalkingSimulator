@@ -3,11 +3,22 @@
 public class MouseLook : MonoBehaviour
 {
     [SerializeField] Transform playerBody;
-    [SerializeField] float mouseSensitivity = 100;
-    [SerializeField] float xClampMin = -90f;
-    [SerializeField] float xClampMax = 90f;
 
-    private float xRot = 0;
+    [Header("Camera movement speeds")]
+    [SerializeField] float horizontalSpeed = 100;
+    [SerializeField] float verticalSpeed = 100;
+
+    [Header("Vertical rotation clamp values")]
+    [Tooltip("Max downwards rotation (Enter as negative)")] [SerializeField] float xClampMin = -90f;
+    [Tooltip("Max upwards rotation (Enter as positive)")] [SerializeField] float xClampMax = 90f;
+
+    [Header("Horizontal rotation clamp values")]
+    [Tooltip("Max left rotation")]  [SerializeField] float yClampMin = -90f;
+    [Tooltip("Max right rotation")]  [SerializeField] float yClampMax = 90f;
+    [Tooltip("Rotation smoothening factor")] [SerializeField] float dampenFactor = 0.1f;
+     
+    private float yaw = 0;
+    private float pitch = 0;
 
     private void Start() {
         Cursor.lockState = CursorLockMode.Locked;
@@ -15,14 +26,12 @@ public class MouseLook : MonoBehaviour
     }
 
     private void LateUpdate() {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+        yaw += horizontalSpeed * Input.GetAxis("Mouse X") * Time.deltaTime;
+        pitch += verticalSpeed * Input.GetAxis("Mouse Y") * Time.deltaTime;
 
-        xRot -= mouseY;
-        xRot = Mathf.Clamp(xRot, xClampMin, xClampMax);
+        pitch = Mathf.Clamp(pitch, xClampMin, xClampMax);
 
-        transform.localRotation = Quaternion.Euler(xRot, 0, 0);
-
-        playerBody.Rotate(Vector3.up * mouseX);
+        transform.eulerAngles = new Vector3(-pitch, yaw, 0.0f);
+        playerBody.eulerAngles = new Vector3(0, yaw, 0);
     }
 }
