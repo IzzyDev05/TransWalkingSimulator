@@ -1,86 +1,55 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using System.Collections;
 
 [RequireComponent(typeof(Animator))]
 public class IKObjectGrabber : MonoBehaviour
 {
     [HideInInspector] public bool objectInRange = false;
-    [HideInInspector] public bool canLookAtObject = false;
-    [HideInInspector] public bool playerShouldHoldObject = false;
+    [HideInInspector] public bool ikActive = false;
 
     [SerializeField] Transform holdableObjectParent;
     [SerializeField] float reactionTime = 0.5f;
 
-    private Transform lookObj = null;
-    private Transform rightHandObj = null;
-
     private float state = 0f;
     private float elapsedTime = 0f;
 
-    private CanLookAtObject objectLookScript;
+    private Transform rightHandObj = null;
     private CanHoldObject objectHoldScript;
     private Animator animator;
 
     private void Start() {
         animator = GetComponentInParent<Animator>();
         state = 0;
-        objectLookScript = FindObjectOfType<CanLookAtObject>();
         objectHoldScript = FindObjectOfType<CanHoldObject>();
     }
 
     private void Update() {
         if (Input.GetKeyDown(KeyCode.E)) {
-            playerShouldHoldObject = !playerShouldHoldObject;
+            ikActive = !ikActive;
         }
     }
 
     private void OnAnimatorIK() {
         if (animator) {
-            // Attach the objects
-            AttachObjectTransforms();
-
-            // Set the look target position, if one has been assigned            
-            LookAtObject();
-
-            // Set the right hand position and rotation, if one has been assigned
             HoldObject();
         }
     }   
 
     private GameObject GetMainObject() {
         GameObject mainObject = rightHandObj.transform.parent.gameObject;
-        return mainObject;
-    }
 
-    private void AttachObjectTransforms() {
-        // Attach the look at object
-        if (canLookAtObject) {
-            lookObj = objectLookScript.objectToLookAt;
+        if (mainObject != null) {
+            return mainObject;
         }
-
-        // Attach the grabbing object
-        if (objectInRange) {
-            rightHandObj = objectHoldScript.objectToHold;
+        else {
+            return null;
         }
     }
 
-    private void LookAtObject() {
-        if (lookObj != null && canLookAtObject) {
-            if (state < 1.0f) {
-                elapsedTime += Time.deltaTime;
-                state = Mathf.Lerp(0, 1, elapsedTime / reactionTime);
-            }
-            else {
-                state = 1.0f;
-                elapsedTime = 0;
-            }
-
-            animator.SetLookAtWeight(state);
-            animator.SetLookAtPosition(lookObj.position);
-        }
-    }
-
+    /*
     private void HoldObject() {
-        if (playerShouldHoldObject) {
+        if (ikActive) {
             if (rightHandObj != null && objectInRange) {
                 if (state < 1.0f) {
                     elapsedTime += Time.deltaTime;
@@ -138,6 +107,35 @@ public class IKObjectGrabber : MonoBehaviour
 
                 animator.SetLookAtWeight(0f);
             }
+        }
+    }
+    */
+
+    private void HoldObject() {
+        if (ikActive) {
+            if (objectInRange) {
+                rightHandObj = objectHoldScript.objectToHold;
+            }
+            else {
+                rightHandObj = null;
+            }
+
+            if (rightHandObj != null) {
+                animator.SetIKPositionWeight(AvatarIKGoal.RightHand, 1);
+                animator.SetIKRotationWeight(AvatarIKGoal.RightHand, 1);
+                animator.SetIKPosition(AvatarIKGoal.RightHand, rightHandObj.position);
+                animator.SetIKRotation(AvatarIKGoal.RightHand, rightHandObj.rotation);
+
+                GameObject mainObject = GetMainObject();
+                mainObject.transform.parent = holdableObjectParent;
+            }
+        }
+        else {
+            animator.SetIKPositionWeight(AvatarIKGoal.RightHand, 0);
+            animator.SetIKRotationWeight(AvatarIKGoal.RightHand, 0);
+
+            GameObject mainObject = GetMainObject();
+            mainObject.transform.parent = null;
         }
     }
 }

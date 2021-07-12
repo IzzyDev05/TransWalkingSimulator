@@ -58,64 +58,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToHold: {fileID: 0}
---- !u!1 &1125547175
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1125547176}
-  - component: {fileID: 1125547178}
-  - component: {fileID: 1125547177}
-  m_Layer: 7
-  m_Name: Lookable Region
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1125547176
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1125547175}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1960362531275679073}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1125547178
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1125547175}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3.6528873, y: 0.573293, z: 4.963221}
-  m_Center: {x: 0.51410675, y: 1.3425878, z: 2.3900921}
---- !u!114 &1125547177
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1125547175}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab5bbc5ac402bf441a12e912352029c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectToLookAt: {fileID: 0}
 --- !u!1 &3615256375469891374
 GameObject:
   m_ObjectHideFlags: 0
@@ -125,7 +67,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1960362531275679073}
-  - component: {fileID: 947208903946375673}
   m_Layer: 7
   m_Name: Rig Holder
   m_TagString: Player
@@ -147,24 +88,9 @@ Transform:
   - {fileID: 5187042050379223441}
   - {fileID: 3987753885960864144}
   - {fileID: 526122138}
-  - {fileID: 1125547176}
   m_Father: {fileID: 5187042050379223429}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &947208903946375673
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3615256375469891374}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.31092954
-  m_Height: 1.7739353
-  m_Direction: 1
-  m_Center: {x: 0.004887879, y: 0.8977983, z: 0}
 --- !u!1 &5187042050378927489
 GameObject:
   m_ObjectHideFlags: 0
@@ -805,7 +731,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 5187042050378927525}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   m_Radius: 0.31092954
   m_Height: 1.7739353
   m_Direction: 1
@@ -823,7 +749,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.9
-  forwardObject: {fileID: 1960362531275679073}
+  forwardObject: {fileID: 5187042050379223429}
 --- !u!114 &3193175220335734663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -853,9 +779,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectInRange: 0
-  canLookAtObject: 0
-  playerShouldHoldObject: 0
-  holdableObjectParent: {fileID: 1960362531275679073}
+  ikActive: 0
+  holdableObjectParent: {fileID: 526122138}
   reactionTime: 0.5
 --- !u!1 &5187042050378927527
 GameObject:
@@ -1779,7 +1704,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8971731071988426477}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.6, z: 0.211}
+  m_LocalPosition: {x: 0, y: 1.605, z: 0.187}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1960362531275679073}
@@ -1808,7 +1733,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.12
+  near clip plane: 0.01
   far clip plane: 1000
   field of view: 60
   orthographic: 0

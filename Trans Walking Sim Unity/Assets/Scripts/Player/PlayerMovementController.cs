@@ -37,9 +37,4 @@ public class PlayerMovementController : MonoBehaviour
         animator.SetFloat("VelocityZ", velocityZ, 0.05f, Time.deltaTime);
         animator.SetFloat("VelocityX", velocityX, 0.05f, Time.deltaTime);
     }
-
-    private void OnDrawGizmos() {
-        Gizmos.color = Color.red;
-        Gizmos.DrawRay(forwardObject.position, forwardObject.forward * 10);
-    }
 }

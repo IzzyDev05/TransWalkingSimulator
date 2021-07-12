@@ -10,9 +10,10 @@ public class CanHoldObject : MonoBehaviour
         objectGrabber = FindObjectOfType<IKObjectGrabber>();
     }
 
-    private void OnTriggerEnter(Collider other) {
+    private void OnTriggerStay(Collider other) {
         if (other.tag == "ObjectGrabber") {
             objectGrabber.objectInRange = true;
+            objectToHold = other.transform;
         }
     }
 
@@ -20,12 +21,6 @@ public class CanHoldObject : MonoBehaviour
         if (other.tag == "ObjectGrabber") {
             objectGrabber.objectInRange = false;
             objectToHold = null;
-        }
-    }
-
-    private void OnTriggerStay(Collider other) {
-        if (other.tag == "ObjectGrabber") {
-            objectToHold = other.gameObject.transform;
         }
     }
 }

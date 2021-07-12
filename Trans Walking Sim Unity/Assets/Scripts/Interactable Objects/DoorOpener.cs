@@ -21,7 +21,7 @@ public class DoorOpener : MonoBehaviour
     }
 
     private IEnumerator OpenDoorAnimation() {
-        if (objectGrabber.playerShouldHoldObject) {
+        if (objectGrabber.ikActive) {
             yield return new WaitForSeconds(doorAnimWaitTime);
             doorParentAnim.enabled = true;
         }
