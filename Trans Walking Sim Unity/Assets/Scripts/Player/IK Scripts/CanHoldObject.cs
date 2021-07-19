@@ -2,6 +2,7 @@
 
 public class CanHoldObject : MonoBehaviour
 {
+    /*
     [HideInInspector] public Transform objectToHold;
 
     private IKObjectGrabber objectGrabber;
@@ -22,5 +23,18 @@ public class CanHoldObject : MonoBehaviour
             objectGrabber.objectInRange = false;
             objectToHold = null;
         }
+    }
+    */
+
+    public static bool canHoldObject;
+
+    private void OnTriggerStay(Collider other) {
+        if (other.gameObject.tag == "HoldableRegion") {
+            canHoldObject = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other) {
+        canHoldObject = false;
     }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DoorOpener : MonoBehaviour
 {
+    /*
     [SerializeField] float doorAnimWaitTime = 1f;
     [SerializeField] Animator doorParentAnim;
 
@@ -29,4 +30,5 @@ public class DoorOpener : MonoBehaviour
             yield return new WaitForSeconds(0.001f);
         }
     }
+    */
 }

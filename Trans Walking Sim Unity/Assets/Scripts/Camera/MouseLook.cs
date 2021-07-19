@@ -2,7 +2,10 @@
 
 public class MouseLook : MonoBehaviour
 {
-    [SerializeField] Transform playerBody;
+    //[SerializeField] Transform playerBody;
+
+    [HideInInspector] public float yaw = 0;
+    [HideInInspector] public float pitch = 0;
 
     [Header("Camera movement speeds")]
     [SerializeField] float horizontalSpeed = 100;
@@ -11,14 +14,6 @@ public class MouseLook : MonoBehaviour
     [Header("Vertical rotation clamp values")]
     [Tooltip("Max downwards rotation (Enter as negative)")] [SerializeField] float xClampMin = -90f;
     [Tooltip("Max upwards rotation (Enter as positive)")] [SerializeField] float xClampMax = 90f;
-
-    [Header("Horizontal rotation clamp values")]
-    [Tooltip("Max left rotation")]  [SerializeField] float yClampMin = -90f;
-    [Tooltip("Max right rotation")]  [SerializeField] float yClampMax = 90f;
-    [Tooltip("Rotation smoothening factor")] [SerializeField] float dampenFactor = 0.1f;
-     
-    private float yaw = 0;
-    private float pitch = 0;
 
     private void Start() {
         Cursor.lockState = CursorLockMode.Locked;
@@ -32,6 +27,6 @@ public class MouseLook : MonoBehaviour
         pitch = Mathf.Clamp(pitch, xClampMin, xClampMax);
 
         transform.eulerAngles = new Vector3(-pitch, yaw, 0.0f);
-        playerBody.eulerAngles = new Vector3(0, yaw, 0);
+        //playerBody.eulerAngles = new Vector3(0, yaw, 0);
     }
 }
