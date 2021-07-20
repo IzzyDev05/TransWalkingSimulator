@@ -27,6 +27,24 @@ public class PlayerMovementController : MonoBehaviour
     }
 
     private void Update() {
+        HandleDialogueCanvas();
+        GetInput();
+    }
+
+    private void HandleDialogueCanvas() {
+        if (DialogueController.dialogueCanvasEnabled) {
+            mouseLook.GetComponent<MouseLook>().enabled = false;
+            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = true;
+        }
+        else {
+            mouseLook.GetComponent<MouseLook>().enabled = true;
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+    }
+
+    private void GetInput() {
         bool forwardPressed = Input.GetKey(KeyCode.W);
         bool leftPressed = Input.GetKey(KeyCode.A);
         bool rightPressed = Input.GetKey(KeyCode.D);

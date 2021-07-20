@@ -1,4 +1,4 @@
-VAR showChocolate = false
+VAR showCoffeeCup = false
 
 Hello there! How are you doing on this fine day?
 -> InitialChoices
@@ -8,27 +8,27 @@ Hello there! How are you doing on this fine day?
 * [I'm doing okay I guess] -> DoingOkay
 
 == DoingGood ==
-Awesome! So, do you like chocolate? 
--> ChocolateOptions
+Awesome! So, do you like coffee? 
+-> CoffeeOptions
 
 == DoingOkay ==
-Oh, sorry to hear that. Do you think a chocolate could help you out?
--> ChocolateOptions
+Oh, sorry to hear that. Do you think a coffee could help you out?
+-> CoffeeOptions
 
-== ChocolateOptions ==
-* [Yes, I love chocolate!] -> LoveChocolate
+== CoffeeOptions ==
+* [Yes, I love coffee!] -> LoveCoffee
 * [I mean if you've got one, sure] -> YouGotOne
 * [Naah, not really] -> NotReally
 
-== LoveChocolate ==
+== LoveCoffee ==
 Amazing! Go look at the table behind you!
-~ showChocolate = true
+~ showCoffeeCup = true
 * [Oh okay, will do. Thanks!] -> END
 
 == YouGotOne ==
 Yes, I do have one! Go look at the table that's behind you! 
-~ showChocolate = true
-* [Boy you do be doing magic and stuff?] -> END
+~ showCoffeeCup = true
+* [Boy you be doing magic and stuff?] -> END
 
 == NotReally ==
 Oh I see. Well, good day then!

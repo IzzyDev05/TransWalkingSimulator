@@ -15,11 +15,6 @@ public class MouseLook : MonoBehaviour
     [Tooltip("Max downwards rotation (Enter as negative)")] [SerializeField] float xClampMin = -90f;
     [Tooltip("Max upwards rotation (Enter as positive)")] [SerializeField] float xClampMax = 90f;
 
-    private void Start() {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-    }
-
     private void LateUpdate() {
         yaw += horizontalSpeed * Input.GetAxis("Mouse X") * Time.deltaTime;
         pitch += verticalSpeed * Input.GetAxis("Mouse Y") * Time.deltaTime;
@@ -27,6 +22,5 @@ public class MouseLook : MonoBehaviour
         pitch = Mathf.Clamp(pitch, xClampMin, xClampMax);
 
         transform.eulerAngles = new Vector3(-pitch, yaw, 0.0f);
-        //playerBody.eulerAngles = new Vector3(0, yaw, 0);
     }
 }

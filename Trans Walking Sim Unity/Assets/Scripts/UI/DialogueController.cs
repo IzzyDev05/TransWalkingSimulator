@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Ink.Runtime;
@@ -7,17 +5,21 @@ using Ink.Runtime;
 public class DialogueController : MonoBehaviour
 {
     public static bool dialogueCanvasEnabled = false;
+    public Story myStory;
 
     [SerializeField] GameObject dialogueCanvas;
     [SerializeField] GameObject dialoguePrefab;
     [SerializeField] GameObject choicePrefab;
     [SerializeField] GameObject dialougeHolder;
     [SerializeField] GameObject choiceHolder;
-    [SerializeField] GameObject chocolateBar;
-    [SerializeField] TextAssetValue dialogueValue;
-    [SerializeField] Story myStory;
 
-    private bool showChocolate;
+    [SerializeField] TextAssetValue dialogueValue;
+
+    private CoffeeCup coffeCupScript;
+
+    private void Start() {
+        coffeCupScript = FindObjectOfType<CoffeeCup>();
+    }
 
     public void EnableCanvas() {
         dialogueCanvas.SetActive(true);
@@ -49,7 +51,10 @@ public class DialogueController : MonoBehaviour
 
     public void RefreshView() {
         while (myStory.canContinue) {
-            ShowChocolateBar();
+            if (coffeCupScript != null) {
+                coffeCupScript.ShowCoffeeCup();
+            }
+
             MakeNewDialogue(myStory.Continue());
         }
         if (myStory.currentChoices.Count > 0) {
@@ -91,24 +96,5 @@ public class DialogueController : MonoBehaviour
     private void ChooseChoice(int choice) {
         myStory.ChooseChoiceIndex(choice);
         RefreshView();
-    }
-
-    private void ShowChocolateBar() {
-        object showChocolate = myStory.variablesState["showChocolate"];
-        bool shouldShowChocolate = false;
-
-        if (showChocolate is bool) {
-            shouldShowChocolate = (bool)showChocolate;
-        }
-        else {
-            shouldShowChocolate = false;
-        }
-
-        if (shouldShowChocolate) {
-            chocolateBar.SetActive(true);
-        }
-        else {
-            chocolateBar.SetActive(false);
-        }
     }
 }
