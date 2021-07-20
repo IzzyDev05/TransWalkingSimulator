@@ -1,34 +1,29 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DoorOpener : MonoBehaviour
 {
-    /*
     [SerializeField] float doorAnimWaitTime = 1f;
-    [SerializeField] Animator doorParentAnim;
-
-    private IKObjectGrabber objectGrabber;
-
-    private void Start() {
-        objectGrabber = FindObjectOfType<IKObjectGrabber>();
-        doorParentAnim.enabled = false;
-    }
+    [SerializeField] Animator animatorObject;
 
     private void OnTriggerStay(Collider other) {
-        if (other.tag == "PlayerHandRegion") {
+        if (other.gameObject.tag == "HoldableRegion") {
+            CanHoldObject.canHoldObject = true;
             StartCoroutine(OpenDoorAnimation());
         }
     }
 
     private IEnumerator OpenDoorAnimation() {
-        if (objectGrabber.ikActive) {
+        if (IKObjectGrabber.ikActive) {
             yield return new WaitForSeconds(doorAnimWaitTime);
-            doorParentAnim.enabled = true;
+            animatorObject.enabled = true;
         }
         else {
             yield return new WaitForSeconds(0.001f);
         }
     }
-    */
+
+    private void OnTriggerExit(Collider other) {
+        CanHoldObject.canHoldObject = false;
+    }
 }
