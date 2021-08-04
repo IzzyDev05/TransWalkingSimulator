@@ -498,6 +498,7 @@ GameObject:
   - component: {fileID: 4943190366060603398}
   - component: {fileID: 4943190366060603399}
   - component: {fileID: 4943190366060603392}
+  - component: {fileID: 3376985601254368372}
   m_Layer: 7
   m_Name: Camera
   m_TagString: MainCamera
@@ -512,8 +513,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4943190366060603394}
-  m_LocalRotation: {x: -0.027449062, y: -0.0059314887, z: -0.025507702, w: 0.9992801}
-  m_LocalPosition: {x: 0.010567683, y: 0.15168227, z: 0.24377297}
+  m_LocalRotation: {x: -0.027448948, y: -0.005931504, z: -0.025507696, w: 0.9992801}
+  m_LocalPosition: {x: 0.01056671, y: 0.15168269, z: 0.20437722}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4943190367522183830}
@@ -587,13 +588,13 @@ MonoBehaviour:
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
   m_Cameras: []
-  m_RendererIndex: -1
+  m_RendererIndex: 0
   m_VolumeLayerMask:
     serializedVersion: 2
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_RenderPostProcessing: 1
-  m_Antialiasing: 0
+  m_Antialiasing: 2
   m_AntialiasingQuality: 2
   m_StopNaN: 0
   m_Dithering: 0
@@ -620,6 +621,22 @@ MonoBehaviour:
   verticalSpeed: 100
   xClampMin: -78
   xClampMax: 69
+--- !u!54 &3376985601254368372
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4943190366060603394}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 8
+  m_CollisionDetection: 0
 --- !u!1 &4943190366075851936
 GameObject:
   m_ObjectHideFlags: 0
