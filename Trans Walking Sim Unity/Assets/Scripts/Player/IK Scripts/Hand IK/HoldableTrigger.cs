@@ -3,10 +3,7 @@ using UnityEngine;
 public class HoldableTrigger : MonoBehaviour
 {
     [SerializeField] GameObject parentObject;
-
-    private void Update() {
-        gameObject.transform.rotation = parentObject.transform.rotation;
-    }
+    [SerializeField] GameObject targetRef;
 
     private void OnTriggerStay(Collider other) {
         if (other.gameObject.tag == "PlayerHandRegion") {

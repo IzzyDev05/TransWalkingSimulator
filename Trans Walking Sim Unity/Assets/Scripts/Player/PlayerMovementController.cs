@@ -15,11 +15,17 @@ public class PlayerMovementController : MonoBehaviour
     private float velocityZ = 0.0f;
     private float velocityX = 0.0f;
 
+    private GameObject npc;
+    private Animator npcAnimator;
     private Animator animator;
     private MouseLook mouseLook;
 
     private void Start() {
         animator = GetComponent<Animator>();
+
+        npc = GameObject.FindGameObjectWithTag("NPC");
+        npcAnimator = npc.GetComponent<Animator>();
+
         mouseLook = FindObjectOfType<MouseLook>();
 
         velocityZHash = Animator.StringToHash("velocityZ");
@@ -34,11 +40,15 @@ public class PlayerMovementController : MonoBehaviour
     private void HandleDialogueCanvas() {
         if (DialogueController.dialogueCanvasEnabled) {
             mouseLook.GetComponent<MouseLook>().enabled = false;
+            animator.enabled = false;
+            npcAnimator.SetBool("isTalking", true);
             Cursor.lockState = CursorLockMode.Confined;
             Cursor.visible = true;
         }
         else {
             mouseLook.GetComponent<MouseLook>().enabled = true;
+            animator.enabled = true;
+            npcAnimator.SetBool("isTalking", false);
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
