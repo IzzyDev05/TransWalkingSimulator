@@ -10,7 +10,7 @@ How may I help you today?
 -> InitialChoices
 
 == InitialChoices ==
-* [Yeah, before that, I want to ask about the lights in here real quick.] -> Lighting
+* [Can I ask something about the lighting real quick?] -> Lighting
 * [I'd just like some coffee, thank you!] -> CupOfCoffee
 * [Nothing much, just wanted a place to rest if I'm being honest] -> JustChat
 
@@ -99,8 +99,8 @@ Oh I see. Yeah, mine was mundane too. Same old same old, yknow.
 * [Haha yeah, I feel you]
 Yeah. But I think these mundane days make life exciting.
 ** [Oh really, how so?]
-You see, if every day was filled with rush and stuff, then after a while, the rush itself becomes mundane, and then you're back in a mundane life. Without mundane days, you would never know what exciting days feel like.
-*** [Mother Mary whispering wordse of wisdom, I see?]
+See, if every day was filled with rush and stuff, then after a while, the rush itself becomes mundane, and then you're back in a mundane life. Without mundane days, you would never know what exciting days feel like.
+*** [Mother Mary speaking words of wisdom, I see?]
 Let it be.
 **** [Haha]
 Anyways, I need to shut down the cafe now. But it was great talking to you! I hope you have a great night!
@@ -116,10 +116,10 @@ You seem like a wise person. I really hope whatever is bothering you gets figure
 * [Aww, thank you so much! You're too kind!]
 Haha, no, not really. I'm just doing what everyone should. 
 ** [Yeah, but still. You don't have to.]
-Yeah, I know. But I should, because this is how I'd want other to treat me as well.
+Yeah, I know. But I should, because this is how I'd want others to treat me as well.
 *** [Do unto others as you would have them do unto you.]
 Right. Anywhoo, I gotta close the cafe now since it's pretty late, or early I guess.
-**** [All right, it was really gund talking to you! Have a great night!]
+**** [All right, it was really fun talking to you! Have a great night!]
 Thank you, and pleasure's all mine! Good night!
 ***** [Bye!] -> END
 

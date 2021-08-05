@@ -15,10 +15,10 @@ public class DialogueController : MonoBehaviour
 
     [SerializeField] TextAssetValue dialogueValue;
 
-    private CoffeeCup coffeCupScript;
+    private HandleCoffeChoice coffeeChoiceScript;
 
     private void Start() {
-        coffeCupScript = FindObjectOfType<CoffeeCup>();
+        coffeeChoiceScript = FindObjectOfType<HandleCoffeChoice>();
     }
 
     public void EnableCanvas() {
@@ -51,8 +51,8 @@ public class DialogueController : MonoBehaviour
 
     public void RefreshView() {
         while (myStory.canContinue) {
-            if (coffeCupScript != null) {
-                coffeCupScript.ShowCoffeeCup();
+            if (coffeeChoiceScript != null) {
+                coffeeChoiceScript.HandleCupChoice();
             }
 
             MakeNewDialogue(myStory.Continue());
