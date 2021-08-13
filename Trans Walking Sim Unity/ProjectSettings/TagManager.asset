@@ -11,6 +11,8 @@ TagManager:
   - HoldableRegion
   - HoldableObject
   - NPC
+  - npcDialogueText
+  - choicePanel
   layers:
   - Default
   - TransparentFX
@@ -21,7 +23,7 @@ TagManager:
   - Ground
   - Player
   - NonLightable
-  - 
+  - NonDeskLampable
   - 
   - 
   - 
@@ -45,6 +47,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: UI
+    uniqueID: 167694573
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

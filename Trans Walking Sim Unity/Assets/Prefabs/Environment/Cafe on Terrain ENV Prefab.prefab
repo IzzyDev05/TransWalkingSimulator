@@ -328,10 +328,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Terrain Texutred
       objectReference: {fileID: 0}
-    - target: {fileID: 6920912096986135105, guid: a31fc36b8b4df9f478f3c866e6c0a56f, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7730380719767134459, guid: a31fc36b8b4df9f478f3c866e6c0a56f, type: 3}
       propertyPath: m_RootOrder
       value: 3
