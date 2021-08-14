@@ -90,7 +90,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 418708771}
   m_LocalRotation: {x: 0.18301275, y: 0.6830127, z: -0.6830127, w: 0.18301275}
-  m_LocalPosition: {x: 3.5449977, y: 4.86, z: 6.2278795}
+  m_LocalPosition: {x: 3.5449977, y: 4.86, z: 5.34}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 740484779}
@@ -196,7 +196,7 @@ MonoBehaviour:
   direction: 0
   velocity: {x: 0, y: 0, z: 0.03}
   speed: 0.03
-  density: 3
+  density: 4
   spawnMinDistance: 0
   spawnMaxDistance: 0.7
   cullingEnabled: 1
@@ -367,7 +367,7 @@ MonoBehaviour:
   direction: 0
   velocity: {x: 0, y: 0, z: 0.03}
   speed: 0.03
-  density: 3
+  density: 4
   spawnMinDistance: 0
   spawnMaxDistance: 0.7
   cullingEnabled: 1
@@ -450,7 +450,7 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   intensityFromLight: 1
   intensityModeAdvanced: 0
-  intensityInside: 0.5
+  intensityInside: 1
   intensityOutside: 0.5
   blendingMode: 0
   spotAngleFromLight: 1
@@ -504,7 +504,7 @@ MonoBehaviour:
   direction: 0
   velocity: {x: 0, y: 0, z: 0.03}
   speed: 0.03
-  density: 3
+  density: 4
   spawnMinDistance: 0
   spawnMaxDistance: 0.7
   cullingEnabled: 1
@@ -587,7 +587,7 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   intensityFromLight: 1
   intensityModeAdvanced: 0
-  intensityInside: 5
+  intensityInside: 1
   intensityOutside: 5
   blendingMode: 0
   spotAngleFromLight: 1
@@ -641,7 +641,7 @@ MonoBehaviour:
   direction: 0
   velocity: {x: 0, y: 0, z: 0.03}
   speed: 0.03
-  density: 3
+  density: 4
   spawnMinDistance: 0
   spawnMaxDistance: 0.7
   cullingEnabled: 1
@@ -8281,7 +8281,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3207100830316174289}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.349439, y: 4.271084, z: 6.1826315}
+  m_LocalPosition: {x: 3.349439, y: 4.271084, z: 5.34}
   m_LocalScale: {x: 0.7470685, y: 0.12845415, z: 0.84344035}
   m_Children: []
   m_Father: {fileID: 3216798406017434003}
@@ -10962,7 +10962,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4168908703326033629}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 3.44, y: 4.045, z: 6.14}
+  m_LocalPosition: {x: 3.44, y: 4.045, z: 5.34}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2852234291920554227}
@@ -21652,6 +21652,10 @@ PrefabInstance:
     - target: {fileID: 1521947139539105011, guid: baf79596e490c3847884937a93435fe6, type: 3}
       propertyPath: m_Name
       value: Desk Lamp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1521947139539105011, guid: baf79596e490c3847884937a93435fe6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2185611895926828617, guid: baf79596e490c3847884937a93435fe6, type: 3}
       propertyPath: m_RootOrder
