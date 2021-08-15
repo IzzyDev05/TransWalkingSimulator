@@ -13,6 +13,9 @@ TagManager:
   - NPC
   - npcDialogueText
   - choicePanel
+  - Gravel
+  - Grass
+  - Wood
   layers:
   - Default
   - TransparentFX

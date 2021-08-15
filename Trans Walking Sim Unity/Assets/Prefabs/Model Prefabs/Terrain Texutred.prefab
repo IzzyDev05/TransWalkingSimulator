@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5809835907893485711}
   m_Layer: 6
   m_Name: Terrain
-  m_TagString: Ground
+  m_TagString: Grass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -145,7 +145,7 @@ GameObject:
   - component: {fileID: 7565881392911098404}
   m_Layer: 6
   m_Name: Road
-  m_TagString: Ground
+  m_TagString: Gravel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295

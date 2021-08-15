@@ -1,0 +1,33 @@
+// LIGHTING STARTS HERE
+== Lighting ==
+Oh yes, I finally had the oppurtunity to set the lights to my liking today! Do you like them?
+* [Yes, I think they look really pretty!] -> PrettyLights
+* [Umm, no. Not really if I'm being honest.] -> DontLikeTheLights
+
+== PrettyLights ==
+Thank you so much! What do you like about them?
+* [It gives a really good vibe!] -> BackToIntro
+* [The colour scheme is just so darn good!] -> BackToIntro
+* [No particular reason, they just look really good!] -> BackToIntro
+
+== BackToIntro ==
+Well, thank you very much! It really means a lot to me that you like them!
+* [Haha no problem]
+So what brings you here today?
+-> InitialChoices
+
+== DontLikeTheLights ==
+Oh I see. Why might that be?
+* [I'm not really a fan of neon kinda lights to be honest, but they aren't ugly or anything] -> IndifferentLights
+* [Ehh, just becasuse] -> BadEnd
+
+== IndifferentLights ==
+Oh okay. Well, thank you, I guess.
+* [Yeah...]
+So, anything that brings you here other than the lights?
+-> InitialChoices
+
+== BadEnd ==
+Well, thank you for your input. I was about to close the cafe. The door's right there! Thanks for coming in!
+* [Ohh uhh, yeah. Gnight.] -> END
+// LIGHTING ENDS HERE

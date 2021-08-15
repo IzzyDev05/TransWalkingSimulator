@@ -22,7 +22,6 @@ public class TypeWriterController : MonoBehaviour
 
         if (choicePanel) {
             animArray = choicePanel.GetComponentsInChildren<Animator>();
-            print(animArray.Length);
         }
         else {
             Debug.LogWarning("Choice panel was not found!");
