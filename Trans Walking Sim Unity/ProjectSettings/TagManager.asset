@@ -16,6 +16,7 @@ TagManager:
   - Gravel
   - Grass
   - Wood
+  - Ambient
   layers:
   - Default
   - TransparentFX

@@ -7,14 +7,14 @@ I'm doing great as well, thank you! How may I help you today?
 -> InitialChoices
 
 == InitialChoices ==
-* [I'd just like some coffee, thank you!] -> CupOfCoffee
+* [I'd just like something to drink please.] -> CupOfCoffee
 // I have removed the lighting branch and place it in a txt file next to the inky file since it's not being used
 * [Nothing much, just wanted a place to rest if I'm being honest] -> JustChat
 
 
 // COFFEE STARTS HERE
 == CupOfCoffee ==
-Sure thing! What kind of coffe would you like? 
+Ofcourse! What can I get you? 
 -> CoffeeOptions
 
 == CoffeeOptions ==
