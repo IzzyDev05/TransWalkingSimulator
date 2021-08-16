@@ -28,9 +28,9 @@ Material:
     - _MaxDist: 60
     - _MinDist: 40
     - _Rad: 0.6
-    - _Radius: 0.5
+    - _Radius: 1
     - _RandomHeight: 0.5
-    - _Strength: 5
+    - _Strength: 7.5
     - _WindSpeed: 50
     - _WindStrength: 0.1
     m_Colors:
