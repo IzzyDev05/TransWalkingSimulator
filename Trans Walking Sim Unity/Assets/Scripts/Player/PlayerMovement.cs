@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] bool isNPC = false;
     [SerializeField] float speed = 5.0f;
     public float cameraOffset = 91.69f;
 
@@ -24,8 +25,10 @@ public class PlayerMovement : MonoBehaviour
     private void Start() {
         animator = GetComponent<Animator>();
 
-        npc = GameObject.FindGameObjectWithTag("NPC");
-        npcAnimator = npc.GetComponent<Animator>();
+        if (isNPC) {
+            npc = GameObject.FindGameObjectWithTag("NPC");
+            npcAnimator = npc.GetComponent<Animator>();
+        }
 
         mouseLook = FindObjectOfType<MouseLook>();
 
@@ -42,14 +45,18 @@ public class PlayerMovement : MonoBehaviour
         if (DialogueController.dialogueCanvasEnabled) {
             mouseLook.GetComponent<MouseLook>().enabled = false;
             animator.enabled = false;
-            npcAnimator.SetBool("isTalking", true);
+            if (npcAnimator) {
+                npcAnimator.SetBool("isTalking", true);
+            }
             Cursor.lockState = CursorLockMode.Confined;
             Cursor.visible = true;
         }
         else {
             mouseLook.GetComponent<MouseLook>().enabled = true;
             animator.enabled = true;
-            npcAnimator.SetBool("isTalking", false);
+            if (npcAnimator) {
+                npcAnimator.SetBool("isTalking", false);
+            }
             Cursor.lockState = CursorLockMode.Confined;
             Cursor.visible = false;
         }
