@@ -218,6 +218,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &465258363 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8126116762162334420, guid: b710060b4e7c955459841ce2c524f881, type: 3}
+  m_PrefabInstance: {fileID: 8737794767263248853}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &465258364
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465258363}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3736213754101489272, guid: b4adb8e59564d1d4aab47003cc6df183, type: 3}
 --- !u!1001 &1380724138
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -225,6 +244,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 398646034105404895, guid: 6c617c63874759f45914a93652fba5a7, type: 3}
+      propertyPath: objectInfo.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 398646034105404895, guid: 6c617c63874759f45914a93652fba5a7, type: 3}
+      propertyPath: objectInfo.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: a4737a65ac8d28e479a25afb2a824b57, type: 2}
     - target: {fileID: 4943190366937242594, guid: 6c617c63874759f45914a93652fba5a7, type: 3}
       propertyPath: m_Name
       value: PlayerMale
@@ -265,6 +292,14 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 95b4fabaf92645b47b01d508061fd389, type: 2}
+    - target: {fileID: 6061966587373988579, guid: 6c617c63874759f45914a93652fba5a7, type: 3}
+      propertyPath: objectInfo.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6061966587373988579, guid: 6c617c63874759f45914a93652fba5a7, type: 3}
+      propertyPath: objectInfo.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: a4737a65ac8d28e479a25afb2a824b57, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c617c63874759f45914a93652fba5a7, type: 3}
 --- !u!1 &1459837983
@@ -349,6 +384,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: -73.416}
+--- !u!1 &1466201671 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6360288575247643913, guid: b710060b4e7c955459841ce2c524f881, type: 3}
+  m_PrefabInstance: {fileID: 8737794767263248853}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1466201675
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1466201671}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 13562882237320842, guid: b4adb8e59564d1d4aab47003cc6df183, type: 3}
 --- !u!1 &2067570418
 GameObject:
   m_ObjectHideFlags: 0
@@ -995,6 +1049,10 @@ PrefabInstance:
       value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 6360288575247643913, guid: b710060b4e7c955459841ce2c524f881, type: 3}
+      propertyPath: m_TagString
+      value: TransPyramid
+      objectReference: {fileID: 0}
+    - target: {fileID: 6360288575247643913, guid: b710060b4e7c955459841ce2c524f881, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -1049,6 +1107,10 @@ PrefabInstance:
     - target: {fileID: 7941543762254314065, guid: b710060b4e7c955459841ce2c524f881, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 8126116762162334420, guid: b710060b4e7c955459841ce2c524f881, type: 3}
+      propertyPath: m_TagString
+      value: BedsidePlate
       objectReference: {fileID: 0}
     - target: {fileID: 8126116762162334420, guid: b710060b4e7c955459841ce2c524f881, type: 3}
       propertyPath: m_StaticEditorFlags

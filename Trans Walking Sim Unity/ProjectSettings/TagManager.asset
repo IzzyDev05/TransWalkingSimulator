@@ -13,10 +13,8 @@ TagManager:
   - NPC
   - npcDialogueText
   - choicePanel
-  - Gravel
-  - Grass
-  - Wood
-  - Ambient
+  - TransPyramid
+  - BedsidePlate
   layers:
   - Default
   - TransparentFX
