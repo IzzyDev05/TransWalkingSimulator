@@ -10,7 +10,7 @@ public class IKObjectGrabber : MonoBehaviour
     [SerializeField] float rigLerpingTime = 0.5f;
 
     private void Update() {
-        if (Input.GetMouseButtonDown(1)) {
+        if (Input.GetKeyDown(KeyCode.X)) {
             ikActive = !ikActive;
         }
 

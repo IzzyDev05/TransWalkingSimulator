@@ -4,6 +4,7 @@ using System.Collections;
 
 public class TypeWriterController : MonoBehaviour
 {
+    [SerializeField] bool isForOptions = false;
     [SerializeField] float disableTime = 0.015f;
 
     private GameObject choicePanel;
@@ -20,22 +21,28 @@ public class TypeWriterController : MonoBehaviour
             textAnimatorPlayer.SkipTypewriter();
         }
 
-        if (choicePanel) {
-            animArray = choicePanel.GetComponentsInChildren<Animator>();
-        }
-        else {
-            Debug.LogWarning("Choice panel was not found!");
-            return;
+        if (isForOptions) {
+            if (choicePanel) {
+                animArray = choicePanel.GetComponentsInChildren<Animator>();
+            }
+            else {
+                Debug.LogWarning("Choice panel was not found!");
+                return;
+            }
         }
     }
 
     public void DisableAnimator() {
-        StartCoroutine(WaitBeforeDisable());
+        if (choicePanel) {
+            StartCoroutine(WaitBeforeDisable());
+        }
     }
 
     public void EnableAnimtor() {
-        foreach (Animator anim in animArray) {
-            anim.enabled = true;
+        if (choicePanel) {
+            foreach (Animator anim in animArray) {
+                anim.enabled = true;
+            }
         }
     }
 

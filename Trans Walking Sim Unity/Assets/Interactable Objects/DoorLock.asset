@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c6af795770b23348addfdf26f7c44df, type: 3}
   m_Name: DoorLock
   m_EditorClassIdentifier: 
-  objectName: 
-  backStory: 
-  objectIdentification: 0
+  objectName: Door lock
+  backStory: I don't know why I'm locked in here. Could it be possible that this
+    is all just a simulation and nothing is real... Nah, probably not.
+  objectIdentification: 3

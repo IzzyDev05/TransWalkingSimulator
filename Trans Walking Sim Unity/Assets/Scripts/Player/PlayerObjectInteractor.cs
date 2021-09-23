@@ -2,10 +2,12 @@
 
 public class PlayerObjectInteractor : MonoBehaviour
 {
-    [SerializeField] InteractableObjectInfo[] objectInfo;
+    public static bool ShowInteractionUI = false;
 
+    [HideInInspector] public InteractableObjectInfo currentObject;
+    [SerializeField] InteractableObjectInfo[] objectInfo;
     private ObjectIdentification triggerObject;
-    private InteractableObjectInfo currentObject;
+    
 
     private void Update() {
         if (Input.GetKeyDown(KeyCode.E)) {
@@ -22,14 +24,17 @@ public class PlayerObjectInteractor : MonoBehaviour
     private void OnTriggerExit(Collider other) {
         triggerObject = ObjectIdentification.None;
         currentObject = null;
+        ShowInteractionUI = false;
     }
 
     private void InteractWithObject() {
         ObjectLocator();
 
         if (currentObject) {
-            print("The name of the object: " + currentObject.objectName);
-            print(currentObject.backStory);
+            ShowInteractionUI = true;
+        }
+        else {
+            ShowInteractionUI = false;
         }
     }
 
