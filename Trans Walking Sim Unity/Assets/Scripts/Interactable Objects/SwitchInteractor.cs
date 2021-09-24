@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class SwitchInteractor : MonoBehaviour
 {
-    [SerializeField] GameObject toggleCanvas;
+    [SerializeField] GameObject interactionCanvas;
     
     [Header("Raycast variables")]
     [SerializeField] Transform rayPos;
@@ -12,7 +12,7 @@ public class SwitchInteractor : MonoBehaviour
     private bool isCanvasOn = false;
 
     private void Start() {
-        toggleCanvas.SetActive(false);
+        interactionCanvas.SetActive(false);
     }
 
     private void Update() {
@@ -38,7 +38,7 @@ public class SwitchInteractor : MonoBehaviour
         Light[] lights = hit.collider.GetComponentsInChildren<Light>();
 
         foreach (Light light in lights) {
-            if (Input.GetKeyDown(KeyCode.L)) {
+            if (Input.GetButtonDown("ActionKey")) {
                 if (light.enabled) {
                     light.enabled = false;
                 }
@@ -51,10 +51,10 @@ public class SwitchInteractor : MonoBehaviour
 
     private void HandleUI() {
         if (isCanvasOn) {
-            toggleCanvas.SetActive(true);
+            interactionCanvas.SetActive(true);
         }
         else {
-            toggleCanvas.SetActive(false);
+            interactionCanvas.SetActive(false);
         }
     }
 }

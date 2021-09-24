@@ -94,7 +94,8 @@ GameObject:
   - component: {fileID: 7294624778632239824}
   - component: {fileID: 2972137219525270697}
   - component: {fileID: 2557260991655218549}
-  m_Layer: 0
+  - component: {fileID: 1884872529}
+  m_Layer: 10
   m_Name: Lamp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166,6 +167,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1884872529
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 197127861062792501}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.003179355, y: 0.0020000013, z: 0.0039415015}
+  m_Center: {x: -0.0005896771, y: 1.6734052e-11, z: 0.0018707506}
 --- !u!1 &450738706576566780
 GameObject:
   m_ObjectHideFlags: 0
@@ -1613,9 +1627,9 @@ GameObject:
   - component: {fileID: 8112018076314428215}
   - component: {fileID: 2097867788830845017}
   - component: {fileID: 6942817841223156593}
-  - component: {fileID: 1466201675}
   - component: {fileID: 1466201676}
-  m_Layer: 0
+  - component: {fileID: 815964163}
+  m_Layer: 11
   m_Name: Pyramid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1685,20 +1699,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1466201675
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6360288575247643913}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 13562882237320842, guid: b4adb8e59564d1d4aab47003cc6df183, type: 3}
 --- !u!114 &1466201676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1712,6 +1712,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectType: 1
+--- !u!65 &815964163
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6360288575247643913}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.008660253, z: 0.007982313}
+  m_Center: {x: 0, y: -9.233281e-18, z: 0.0039911564}
 --- !u!1 &6403992514223879328
 GameObject:
   m_ObjectHideFlags: 0
@@ -2559,7 +2572,7 @@ GameObject:
   - component: {fileID: 182108263463137288}
   - component: {fileID: 7587039061163991096}
   - component: {fileID: 1701968523}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2935,9 +2948,9 @@ GameObject:
   - component: {fileID: 1858370433744980899}
   - component: {fileID: 8650415074907033196}
   - component: {fileID: 5329384738928818367}
-  - component: {fileID: 465258367}
   - component: {fileID: 465258368}
-  m_Layer: 0
+  - component: {fileID: 1864675828}
+  m_Layer: 11
   m_Name: Plate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3007,20 +3020,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &465258367
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8126116762162334420}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3736213754101489272, guid: b4adb8e59564d1d4aab47003cc6df183, type: 3}
 --- !u!114 &465258368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3034,6 +3033,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectType: 2
+--- !u!65 &1864675828
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8126116762162334420}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0028275189, y: 0.0033728632, z: 0.0019583732}
+  m_Center: {x: -0.00027126426, y: 0.000019268535, z: 0.0009630382}
 --- !u!1 &8135422134368627910
 GameObject:
   m_ObjectHideFlags: 0

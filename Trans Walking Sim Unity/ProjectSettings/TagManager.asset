@@ -15,6 +15,7 @@ TagManager:
   - choicePanel
   - TransPyramid
   - BedsidePlate
+  - deathTrigger
   layers:
   - Default
   - TransparentFX
@@ -27,8 +28,8 @@ TagManager:
   - NonLightable
   - NonDeskLampable
   - Lighting
-  - 
-  - 
+  - Interactable Object
+  - Bed
   - 
   - 
   - 

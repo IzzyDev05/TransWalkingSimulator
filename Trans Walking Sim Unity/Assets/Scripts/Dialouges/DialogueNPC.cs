@@ -30,7 +30,7 @@ public class DialogueNPC : MonoBehaviour
     }
 
     private void HandleDialogueUI() {
-        if (playerInRange && Input.GetKey(KeyCode.F)) {
+        if (playerInRange && Input.GetButtonDown("ActionKey")) {
             dialogueValue.value = myDialogue;
             dialogueController.EnableCanvas();
         }

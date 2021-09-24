@@ -2186,7 +2186,7 @@ BoxCollider:
   m_GameObject: {fileID: 5503444697339656452}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.72, y: 1, z: 0.8}
   m_Center: {x: 0, y: 1, z: 0.45}
@@ -2207,6 +2207,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a4737a65ac8d28e479a25afb2a824b57, type: 2}
   - {fileID: 11400000, guid: c50a70029a40a9a42a58f07532bfb58a, type: 2}
   - {fileID: 11400000, guid: 7a5b840023c62204f8568f67e251bf78, type: 2}
+  interactionKeyUI: {fileID: 0}
+  rayPos: {fileID: 4943190366060603393}
+  objectLayer:
+    serializedVersion: 2
+    m_Bits: 2048
+  rayDistance: 1.25
 --- !u!114 &2165814399613483527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2219,6 +2225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b0c4325e37840a49a2250098d4cb7de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionCanvas: {fileID: 0}
   rayPos: {fileID: 4943190366060603393}
   lightingLayer:
     serializedVersion: 2
